@@ -1,4 +1,3 @@
-# def (n):
 import random
 
 n = int(input('What limit of random number would you like to guess eg 10 to infinity?: '))
@@ -8,15 +7,15 @@ num = ''
 guess_no = 0
 is_guess_limit = False
 
-print('Attempt', guess_no + 1, '/', trial, ':', 'Guess a number between 0 and ', n, '**', r_num, '**', sep = '')
+print('Attempt {}/{}: \nGuess a number between 0 and {}'.format(guess_no + 1,trial, n))
 while num != r_num and not(is_guess_limit):
     num = int(input())
     guess_no += 1 
     if guess_no < trial:
         if num < r_num:
-            print('Attempt {}/{}: Your guess is too small, guess a larger number:'.format(guess_no + 1, trial))
+            print('Attempt {}/{}: \nYour guess is too small, guess a larger number:'.format(guess_no + 1, trial))
         if num > r_num:
-            print('Attempt {}/{}: Your guess is too large, guess a smaller number:'.format(guess_no + 1, trial)) 
+            print('Attempt {}/{}: \nYour guess is too large, guess a smaller number:'.format(guess_no + 1, trial)) 
     else:
         is_guess_limit = True
 if is_guess_limit and num != r_num :
